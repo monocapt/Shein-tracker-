@@ -5,10 +5,13 @@ on:
     - cron: '30 2 * * *'
   workflow_dispatch:
 
+env:
+  TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_KEY }}
+  TELEGRAM_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
+
 jobs:
   scrape_shein:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -25,7 +28,4 @@ jobs:
           playwright install chromium
           
       - name: Run Tracker Script
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_KEY }}
-          TELEGRAM_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
         run: python shein_tracker.py
