@@ -56,7 +56,7 @@ def scrape_and_notify_highest_discounts(url, my_coupon_percent, my_points):
                 discount_percent = ((mrp - current_price) / mrp) * 100
                 
                 # Check if it meets the 80% threshold
-                if discount_percent >= 80:
+                if discount_percent >= 0:
                     deals_found = True
                     final_checkout_price = calculate_shein_india_price(mrp, current_price, my_coupon_percent, my_points)
                     
