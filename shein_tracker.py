@@ -66,7 +66,7 @@ def scrape_with_browser():
             discount_percent = ((mrp - current_price) / mrp) * 100
             
             # Target alert threshold (Set to 80 for normal use, 0 for a guaranteed test message)
-            if discount_percent >= 80: 
+            if discount_percent >= 0: 
                 deals_found = True
                 final_checkout_price = calculate_shein_india_price(mrp, current_price, my_coupon_percent, my_points)
                 
