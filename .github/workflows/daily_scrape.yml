@@ -2,7 +2,7 @@ name: Daily SHEIN Deal Tracker
 
 on:
   schedule:
-    - cron: '30 2 * * *' 
+    - cron: '30 2 * * *'
   workflow_dispatch:
 
 jobs:
@@ -26,6 +26,6 @@ jobs:
           
       - name: Run Tracker Script
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_KEY }}
+          TELEGRAM_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
         run: python shein_tracker.py
